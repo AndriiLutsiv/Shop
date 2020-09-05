@@ -1,0 +1,28 @@
+.CollectionItem {
+    width: 15%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.Image {
+    height: 380px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+
+.Description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Price {
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.Name {
+    margin-left: 10px;
+}

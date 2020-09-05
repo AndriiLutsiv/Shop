@@ -1,0 +1,12 @@
+.Input {
+    border-bottom: 1px solid grey;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.Input input {
+    border: none;
+    padding-bottom: 10px;
+    outline: none;
+}

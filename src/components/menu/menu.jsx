@@ -1,7 +1,6 @@
 import React from "react";
 import MenuItem from "./menuItem/menuItem";
 import classes from "./menu.module.css";
-import { withRouter } from "react-router-dom";
 class Menu extends React.Component {
   state = {
     departments: [
