@@ -11,14 +11,7 @@ const CollectionPreview = (props) => {
             return index < 5;
           })
           .map((item) => {
-            return (
-              <CollectionItem
-                key={item.id}
-                image={item.imageUrl}
-                name={item.name}
-                price={item.price}
-              />
-            );
+            return <CollectionItem item={item} key={item.id} />;
           })}
       </div>
     </div>

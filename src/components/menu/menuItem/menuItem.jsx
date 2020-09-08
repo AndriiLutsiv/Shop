@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./menuItem.module.css";
 import { withRouter } from "react-router-dom";
 const MenuItem = (props) => {
-  console.log("props if Item:", props);
   return (
     <div
       style={{ backgroundImage: `url(${props.image})` }}

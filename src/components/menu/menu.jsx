@@ -21,7 +21,7 @@ class Menu extends React.Component {
       {
         title: "sneakers",
         imageUrl:
-          "https://wallup.net/wp-content/uploads/2017/11/17/202298-shoes-Converse.jpg",
+          "https://i.pinimg.com/originals/7d/57/e9/7d57e969eda3a188ea547036a81924ef.jpg",
         id: 3,
         linkUrl: "shop/sneakers",
       },

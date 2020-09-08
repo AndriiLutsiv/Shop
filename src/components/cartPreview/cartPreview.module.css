@@ -1,0 +1,29 @@
+.CartPreview {
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    position: absolute;
+    top: 25px;
+    right: -300px;
+    border: 2px solid black;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: scroll;
+    align-items: center;
+    justify-content: center;
+}
+
+.CartItems {
+    /* background-color: brown; */
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+    /* flex-basis: auto; */
+}
+
+/* .CartPreview .ButtonArea {
+    flex-grow: 1;
+    flex-shrink: 1;
+} */

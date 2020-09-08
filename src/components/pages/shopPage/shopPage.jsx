@@ -13,18 +13,21 @@ class ShopPage extends React.Component {
             name: "Brown Brim",
             imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
             price: 25,
+            quantity: 0,
           },
           {
             id: 2,
             name: "Blue Beanie",
             imageUrl: "https://i.ibb.co/ypkgK0X/blue-beanie.png",
             price: 18,
+            quantity: 0,
           },
           {
             id: 3,
             name: "Brown Cowboy",
             imageUrl: "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
             price: 35,
+            quantity: 0,
           },
           {
             id: 4,
