@@ -42,7 +42,6 @@ class Menu extends React.Component {
     ],
   };
   render() {
-    console.log("props if Menu:", this.props);
     return (
       <div className={classes.Menu}>
         {this.state.departments.map((department) => {

@@ -1,11 +1,10 @@
 import * as TYPES from './cartPreviewActionType'
-// import {
-//     itemQuantity
-// } from './cartPreviewUtils';
+import {
+    itemQuantity
+} from './cartPreviewUtils';
 const initialState = {
     displayPreview: false,
     items: [],
-    items2: new Set(items),
 };
 
 const cartPreviewReducer = (state = initialState, action) => {
@@ -16,14 +15,10 @@ const cartPreviewReducer = (state = initialState, action) => {
                 displayPreview: !state.displayPreview
             };
         case TYPES.ADD_ITEM:
-            return {
+            return { //it returns new Set of unique items
                 ...state,
-                items: [...state.items, action.item],
+                items: itemQuantity([...state.items, action.item]),
             }
-            // return {
-            //     ...state,
-            //     items: itemQuantity(),
-            // }
             default:
                 return state;
 

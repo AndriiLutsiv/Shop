@@ -11,7 +11,7 @@ const ShoppingCart = (props) => {
       <div>
         <img src={supermarket} alt="#" />
       </div>
-      <div className={classes.Quantity}>0</div>
+      <div className={classes.Quantity}>{props.items.length}</div>
       {props.displayPreview && (
         <CartPreview cartPreviewAC={props.cartPreviewAC} />
       )}
@@ -22,6 +22,7 @@ const ShoppingCart = (props) => {
 const mapStateToProps = (state) => {
   return {
     displayPreview: state.cartPreviewReducer.displayPreview,
+    items: state.cartPreviewReducer.items,
   };
 };
 

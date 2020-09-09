@@ -1,0 +1,46 @@
+.CheckOutPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Panel {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Panel1 {
+    width: 15%;
+    text-align: left;
+
+}
+
+.Panel2 {
+    width: 15%;
+    text-align: center;
+}
+
+.Panel3 {
+    width: 15%;
+    text-align: center;
+}
+
+.Panel4 {
+    width: 15%;
+    text-align: center;
+}
+
+.Panel5 {
+    width: 15%;
+    text-align: right;
+}
+
+.Total {
+    margin-top: 25px;
+    font-size: 25px;
+}

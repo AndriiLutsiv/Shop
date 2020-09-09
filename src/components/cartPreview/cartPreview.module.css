@@ -5,25 +5,38 @@
     top: 25px;
     right: -300px;
     border: 2px solid black;
-    width: 300px;
+    width: 280px;
     height: 500px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    overflow: scroll;
+    padding: 20px;
+
     align-items: center;
     justify-content: center;
 }
 
 .CartItems {
-    /* background-color: brown; */
     flex-grow: 1;
     width: 100%;
     text-align: center;
-    /* flex-basis: auto; */
+    overflow: scroll;
+
 }
 
-/* .CartPreview .ButtonArea {
-    flex-grow: 1;
-    flex-shrink: 1;
-} */
+.CartItems::-webkit-scrollbar {
+    width: 3px;
+    /* width of the entire scrollbar */
+}
+
+.CartItems::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    /* color of the tracking area */
+}
+
+.CartItems::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 43, 43);
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb */
+
+}
