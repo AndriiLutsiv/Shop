@@ -3,33 +3,50 @@ import classes from "./collectionItem.module.css";
 import Button from "../../../../../button";
 import * as AC from "../../../../../Redux/cartPreview/cartPreviewAC";
 import { connect } from "react-redux";
-const CollectionItem = (props) => {
-  const addItem = () => {
-    props.addItemAC(props.item);
+import ButtonAdded from "../../../../../buttonAdded";
+class CollectionItem extends React.Component {
+  addItem = () => {
+    // this.props.addItemAC(this.props.item, this.props.item.price);
+    this.props.addItemThunkCreator(
+      this.props.item,
+      this.props.item.price,
+      this.props.item.id
+    );
   };
-  return (
-    <div className={classes.CollectionItem}>
-      <div
-        className={classes.Image}
-        style={{ backgroundImage: `url(${props.item.imageUrl})` }}
-      ></div>
-      <div className={classes.Description}>
-        <div className={classes.Name}>{props.item.name}</div>
-        <div className={classes.Price}>{props.item.price}</div>
+
+  render() {
+    return (
+      <div className={classes.CollectionItem}>
+        <div
+          className={classes.Image}
+          style={{ backgroundImage: `url(${this.props.item.imageUrl})` }}
+        ></div>
+        <div className={classes.Description}>
+          <div className={classes.Name}>{this.props.item.name}</div>
+          <div className={classes.Price}>{this.props.item.price}</div>
+        </div>
+        <div className={classes.WithButton}>
+          {localStorage.getItem(this.props.item.id) ? (
+            <ButtonAdded />
+          ) : (
+            <Button onClick={this.addItem} meaning={"Add to cart"} />
+          )}
+        </div>
       </div>
-      <div className={classes.WithButton}>
-        <Button onClick={addItem} meaning={"Add to cart"} />
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    items: state.cartPreviewReducer.items,
+    buttonState: state.cartPreviewReducer.buttonState,
+  };
 };
 const mapDispatchToPrps = (dispatch) => {
   return {
-    addItemAC: (item) => dispatch(AC.addItemAC(item)),
+    addItemThunkCreator: (item, itemPrice, itemId) =>
+      dispatch(AC.addItemThunkCreator(item, itemPrice, itemId)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToPrps)(CollectionItem);

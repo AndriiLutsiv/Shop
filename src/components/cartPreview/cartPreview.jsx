@@ -3,6 +3,7 @@ import Button from "../../button";
 import classes from "./cartPreview.module.css";
 import { connect } from "react-redux";
 import CartPreviewItem from "./cartPreviewItem/cartPreviewItem";
+import { NavLink } from "react-router-dom";
 
 const CartPreview = (props) => {
   return (
@@ -13,7 +14,9 @@ const CartPreview = (props) => {
         })}
       </div>
       <div className={classes.ButtonArea}>
-        <Button meaning={"Go to checkout"} />
+        <NavLink to={"/checkout"}>
+          <Button meaning={"Go to checkout"} />
+        </NavLink>
       </div>
     </div>
   );

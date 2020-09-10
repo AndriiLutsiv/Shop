@@ -1,0 +1,13 @@
+.ButtonAdded {
+    padding: 10px 25px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(148, 148, 148);
+    color: rgb(32, 109, 32);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ButtonAdded:hover {
+    cursor: not-allowed;
+}

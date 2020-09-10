@@ -8,7 +8,7 @@ const CollectionPreview = (props) => {
       <div className={classes.Preview}>
         {props.items
           .filter((element, index) => {
-            return index < 5;
+            return index < props.itemsArrayLength;
           })
           .map((item) => {
             return <CollectionItem item={item} key={item.id} />;

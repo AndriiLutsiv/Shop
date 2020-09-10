@@ -1,11 +1,12 @@
 import logger from "redux-logger";
 import cartPreviewReducer from './cartPreview/cartPreviewReducer';
+import thunkMiddleware from 'redux-thunk';
 import {
     createStore,
     applyMiddleware,
     combineReducers
 } from "redux";
-const middlewares = [logger];
+const middlewares = [logger, thunkMiddleware];
 
 
 const reducers = combineReducers({
