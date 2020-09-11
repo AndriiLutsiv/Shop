@@ -6,7 +6,7 @@ const MenuItem = (props) => {
     <div
       style={{ backgroundImage: `url(${props.image})` }}
       className={classes.Item}
-      onClick={() => props.history.push(props.match.url + props.linkUrl)}
+      onClick={() => props.history.push(props.match.url + props.id)}
     >
       <div className={classes.Content}>
         <h1 className={classes.Title}>{props.title.toUpperCase()}</h1>

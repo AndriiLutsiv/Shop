@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import ButtonAdded from "../../../../../buttonAdded";
 class CollectionItem extends React.Component {
   addItem = () => {
-    // this.props.addItemAC(this.props.item, this.props.item.price);
     this.props.addItemThunkCreator(
       this.props.item,
       this.props.item.price,

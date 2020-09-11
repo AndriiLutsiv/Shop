@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import CollectionPreview from "../../shopPage/collectionPreview/collectionPreview";
-class Jackets extends React.Component {
+class Sneakers extends React.Component {
   render() {
-    const jackets = this.props.data.find((section) => {
-      return section.title === "Jackets";
+    const sneakers = this.props.data.find((section) => {
+      return section.title === "Sneakers";
     });
     return (
       <CollectionPreview
-        items={jackets.items}
-        title={jackets.title}
-        itemsArrayLength={jackets.items.length}
+        items={sneakers.items}
+        title={sneakers.title}
+        itemsArrayLength={sneakers.items.length}
       />
     );
   }
@@ -23,4 +23,4 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Jackets);
+export default connect(mapStateToProps, mapDispatchToProps)(Sneakers);

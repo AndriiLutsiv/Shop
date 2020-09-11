@@ -21,9 +21,3 @@
     color: black;
     font-size: 18px;
 }
-
-.Tabs a:hover,
-.Tabs a:active {
-    transform: rotate(7deg) scale(1.2);
-    color: rgb(95, 95, 95);
-}
