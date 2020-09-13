@@ -31,6 +31,7 @@ const cartPreviewReducer = (state = initialState, action) => {
                             return {
                                 ...item,
                                 quantity: (item.quantity += 1),
+
                             };
                         } else {
                             return item;

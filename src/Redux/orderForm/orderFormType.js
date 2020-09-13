@@ -1,0 +1,2 @@
+export const SHOW_ORDER_FORM = 'SHOW_ORDER_FORM';
+export const HIDE_ORDER_FORM = 'HIDE_ORDER_FORM';

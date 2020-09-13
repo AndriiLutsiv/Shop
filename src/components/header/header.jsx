@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./header.module.css";
 import ShoppingCart from "./shoppingCart/shoppingCart";
+import OrderForm from "../orderForm/orderForm";
 
 const Header = () => {
   return (
@@ -16,6 +17,8 @@ const Header = () => {
         <NavLink to={"/auth"}>SIGN IN</NavLink>
 
         <ShoppingCart />
+
+        <OrderForm />
       </div>
     </div>
   );

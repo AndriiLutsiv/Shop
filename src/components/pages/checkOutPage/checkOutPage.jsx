@@ -2,10 +2,17 @@ import React from "react";
 import classes from "./checkOutPage.module.css";
 import CheckOutItem from "./checkOutItem/checkOutItem";
 import * as AC from "../../../Redux/cartPreview/cartPreviewAC";
+import * as ACorderForm from "../../../Redux/orderForm/orderFormAC";
 import { connect } from "react-redux";
+import Button from "../../../button";
+import OrderForm from "../../orderForm/orderForm";
+
 const CheckOutPage = (props) => {
   return (
-    <div className={classes.CheckOutPage}>
+    <div
+      style={{ display: props.open && "none" }}
+      className={classes.CheckOutPage}
+    >
       <div className={classes.Panel}>
         <div className={classes.Panel1}>Product</div>
         <div className={classes.Panel2}>Description</div>
@@ -22,9 +29,16 @@ const CheckOutPage = (props) => {
             increase={() =>
               props.increaseAC(item.id, item.price, item.quantity)
             }
-            decrease={() =>
-              props.decreaseAC(item.id, item.price, item.quantity)
-            }
+            decrease={() => {
+              props.decreaseAC(item.id, item.price, item.quantity);
+              if (item.quantity < 1) {
+                props.removeItemThunkCreator(
+                  item.id,
+                  item.price,
+                  item.quantity
+                );
+              }
+            }}
             remove={() =>
               props.removeItemThunkCreator(item.id, item.price, item.quantity)
             }
@@ -33,6 +47,12 @@ const CheckOutPage = (props) => {
         );
       })}
       <div className={classes.Total}>TOTAL: {props.totalPrice}$</div>
+
+      <Button
+        disabled={props.items.length < 1 ? true : false}
+        onClick={() => props.showOrderFormAC()}
+        meaning={"MAKE PURCHASE"}
+      />
     </div>
   );
 };
@@ -41,6 +61,7 @@ const mapStateToProps = (state) => {
   return {
     items: state.cartPreviewReducer.items,
     totalPrice: state.cartPreviewReducer.totalPrice,
+    open: state.orderFormReducer.open,
   };
 };
 
@@ -52,6 +73,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(AC.decreaseAC(itemId, itemPrice, quantity)),
     removeItemThunkCreator: (itemId, itemPrice, quantity) =>
       dispatch(AC.removeItemThunkCreator(itemId, itemPrice, quantity)),
+    showOrderFormAC: () => dispatch(ACorderForm.showOrderFormAC()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CheckOutPage);
