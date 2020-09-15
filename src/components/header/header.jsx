@@ -17,8 +17,6 @@ const Header = () => {
         <NavLink to={"/auth"}>SIGN IN</NavLink>
 
         <ShoppingCart />
-
-        <OrderForm />
       </div>
     </div>
   );

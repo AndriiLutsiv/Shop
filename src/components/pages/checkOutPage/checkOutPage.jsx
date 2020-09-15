@@ -6,56 +6,69 @@ import * as ACorderForm from "../../../Redux/orderForm/orderFormAC";
 import { connect } from "react-redux";
 import Button from "../../../button";
 import OrderForm from "../../orderForm/orderForm";
+import BackDrop from "../../backDrop/BackDrop";
 
-const CheckOutPage = (props) => {
-  return (
-    <div
-      style={{ display: props.open && "none" }}
-      className={classes.CheckOutPage}
-    >
-      <div className={classes.Panel}>
-        <div className={classes.Panel1}>Product</div>
-        <div className={classes.Panel2}>Description</div>
-        <div className={classes.Panel3}>Quantity</div>
-        <div className={classes.Panel4}>Price</div>
-        <div className={classes.Panel5}>Remove</div>
-      </div>
-      {props.items.map((item) => {
-        return (
-          <CheckOutItem
-            key={item.id}
-            image={item.imageUrl}
-            quantity={item.quantity}
-            increase={() =>
-              props.increaseAC(item.id, item.price, item.quantity)
-            }
-            decrease={() => {
-              props.decreaseAC(item.id, item.price, item.quantity);
-              if (item.quantity < 1) {
-                props.removeItemThunkCreator(
-                  item.id,
-                  item.price,
-                  item.quantity
-                );
-              }
-            }}
-            remove={() =>
-              props.removeItemThunkCreator(item.id, item.price, item.quantity)
-            }
-            price={item.price}
+class CheckOutPage extends React.Component {
+  componentDidMount() {
+    this.props.checkItemThunkCreator();
+  }
+  render() {
+    return (
+      <>
+        <BackDrop />
+
+        <OrderForm open={this.props.open} />
+
+        <div className={classes.CheckOutPage}>
+          <div className={classes.Panel}>
+            <div className={classes.Panel1}>Product</div>
+            <div className={classes.Panel2}>Description</div>
+            <div className={classes.Panel3}>Quantity</div>
+            <div className={classes.Panel4}>Price</div>
+            <div className={classes.Panel5}>Remove</div>
+          </div>
+          {this.props.items.map((item) => {
+            return (
+              <CheckOutItem
+                key={item.id}
+                image={item.imageUrl}
+                quantity={item.quantity}
+                increase={() =>
+                  this.props.increaseAC(item.id, item.price, item.quantity)
+                }
+                decrease={() => {
+                  this.props.decreaseAC(item.id, item.price, item.quantity);
+                  if (item.quantity < 1) {
+                    this.props.removeItemThunkCreator(
+                      item.id,
+                      item.price,
+                      item.quantity
+                    );
+                  }
+                }}
+                remove={() =>
+                  this.props.removeItemThunkCreator(
+                    item.id,
+                    item.price,
+                    item.quantity
+                  )
+                }
+                price={item.price}
+              />
+            );
+          })}
+          <div className={classes.Total}>TOTAL: {this.props.totalPrice}$</div>
+
+          <Button
+            disabled={this.props.items.length < 1 ? true : false}
+            onClick={() => this.props.showOrderFormAC()}
+            meaning={"MAKE PURCHASE"}
           />
-        );
-      })}
-      <div className={classes.Total}>TOTAL: {props.totalPrice}$</div>
-
-      <Button
-        disabled={props.items.length < 1 ? true : false}
-        onClick={() => props.showOrderFormAC()}
-        meaning={"MAKE PURCHASE"}
-      />
-    </div>
-  );
-};
+        </div>
+      </>
+    );
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
@@ -74,6 +87,7 @@ const mapDispatchToProps = (dispatch) => {
     removeItemThunkCreator: (itemId, itemPrice, quantity) =>
       dispatch(AC.removeItemThunkCreator(itemId, itemPrice, quantity)),
     showOrderFormAC: () => dispatch(ACorderForm.showOrderFormAC()),
+    checkItemThunkCreator: () => dispatch(AC.checkItemThunkCreator()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CheckOutPage);

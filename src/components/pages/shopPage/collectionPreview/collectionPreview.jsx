@@ -3,7 +3,6 @@ import CollectionItem from "./collectionItem/collectionItem";
 import classes from "./collectionPreview.module.css";
 import { withRouter } from "react-router-dom";
 const CollectionPreview = (props) => {
-  console.log(props);
   const goToSection = () => {
     props.history.push(`/${props.title}`);
   };

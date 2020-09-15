@@ -1,20 +1,31 @@
-.Background {
-    height: 100vh;
-    width: 100%;
+.OrderForm {
+    height: 400px;
+    width: 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    background-image: url('../../assets/man.png');
     background-color: rgb(255, 255, 255);
-    position: absolute;
-    opacity: 1;
-    transition: 0.1s;
-    top: 0;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 8px -2px gray;
+    left: 50%;
+    margin-left: -140px;
+    top: 30vh;
+    z-index: 5;
     transition: all 0.5s ease-out;
-    z-index: 3;
 }
 
-.BackgroundOpen {
+.OrderFormOpen {
     animation: openModal 0.5s ease-out forwards;
 }
 
-.BackgroundClose {
+.OrderFormClose {
     animation: closeModal 0.5s ease-out forwards;
 }
 
@@ -34,38 +45,22 @@
 
 @keyframes closeModal {
     0% {
+        /* opacity: 0; */
         transform: translateY(0);
     }
 
     50% {
+        /* opacity: 0; */
         transform: translateY(20vh);
     }
 
     100% {
+        /* opacity: 0; */
         transform: translateY(-100vh);
     }
 }
 
-.OrderForm {
-    height: 400px;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid grey;
-    background-image: url('../../assets/man.png');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    box-sizing: border-box;
-    box-shadow: 5px 5px 8px -2px gray;
-    left: 50%;
-    margin-left: -140px;
-    top: 30%;
-    z-index: 5;
 
-}
 
 .Cross {
     border: 1px solid grey;

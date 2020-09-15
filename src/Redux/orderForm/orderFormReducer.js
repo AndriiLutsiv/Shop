@@ -1,6 +1,6 @@
 import * as TYPES from "./orderFormType";
 const initialState = {
-    open: false
+    open: true
 };
 
 const orderFormReducer = (state = initialState, action) => {

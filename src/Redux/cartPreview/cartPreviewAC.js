@@ -1,4 +1,7 @@
 import * as TYPES from './cartPreviewActionType';
+import {
+    initialState
+} from '../departmentsData/departmentsDataReducer';
 export const cartPreviewAC = () => {
     return {
         type: TYPES.TOGGLE_CART_PREVIEW
@@ -51,5 +54,20 @@ export const decreaseAC = (itemId, itemPrice, quantity) => {
         itemId: itemId,
         itemPrice: itemPrice,
         quantity: quantity
+    }
+}
+
+export const checkItemThunkCreator = () => {
+
+    return (dispatch) => {
+        initialState.sections.forEach(section => {
+            section.items.forEach(item => {
+                // console.log(item)
+                if (localStorage.getItem(item.id)) {
+                    dispatch(addItemAC(item, item.price))
+                }
+            });
+
+        });
     }
 }

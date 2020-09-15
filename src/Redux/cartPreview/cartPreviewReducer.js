@@ -4,7 +4,9 @@ import {
 } from "./cartPreviewUtils";
 const initialState = {
     displayPreview: false,
-    items: [],
+    items: [
+
+    ],
     totalPrice: 0,
 };
 
