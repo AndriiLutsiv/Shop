@@ -8,8 +8,8 @@ const CollectionPreview = (props) => {
   };
   return (
     <div className={classes.CollectionPreview}>
-      <h1 onClick={goToSection}>
-        <span className={classes.Title}>{props.title.toUpperCase()}</span>
+      <h1 >
+        <span onClick={goToSection} className={classes.Title}>{props.title.toUpperCase()}</span>
       </h1>
       <div className={classes.Preview}>
         {props.items

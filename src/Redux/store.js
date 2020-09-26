@@ -17,4 +17,5 @@ const reducers = combineReducers({
     orderFormReducer,
 });
 const store = createStore(reducers, applyMiddleware(...middlewares));
+window.store = store;
 export default store;

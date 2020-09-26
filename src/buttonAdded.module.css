@@ -11,3 +11,15 @@
 .ButtonAdded:hover {
     cursor: not-allowed;
 }
+
+
+@media (min-width: 480px) {
+    .ButtonAdded {
+        padding: 8px 9px;
+    }
+}
+@media (min-width: 900px) {
+    .ButtonAdded {
+        padding: 10px 25px;
+    }
+}

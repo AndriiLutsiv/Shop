@@ -1,8 +1,18 @@
 .CollectionItem {
-    width: 15%;
-    margin-left: 15px;
-    margin-right: 15px;
+    width: 70%;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
     position: relative;
+    margin-bottom: 15px;
+}
+
+.CollectionItem button {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .CollectionItem:hover {
@@ -14,11 +24,14 @@
     top: 75%;
     right: 24%;
     opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .Image {
-    height: 380px;
-
+    height: 200px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -37,4 +50,68 @@
 
 .Name {
     margin-left: 10px;
+}
+@media (min-width: 480px) {
+    .CollectionItem {
+        width: 25%;
+        margin-left: 7.5px;
+        margin-right: 7.5px;
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .Image {
+        height: 240px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+    .CollectionItem {
+        width: 15%;
+        margin-left: 15px;
+        margin-right: 15px;
+        position: relative;
+        margin-bottom: 0px;
+    }
+
+    .CollectionItem button {
+        top: 75%;
+    }
+    
+    .CollectionItem:hover {
+        opacity: 0.95;
+    }
+    
+    .WithButton {
+        position: absolute;
+        top: 75%;
+        right: 24%;
+        opacity: 0.7;
+    }
+    
+    .Image {
+        height: 380px;
+    
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 10px;
+    }
+    
+    .Description {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .Price {
+        margin-right: 10px;
+        font-weight: 700;
+    }
+    
+    .Name {
+        margin-left: 10px;
+    }
 }

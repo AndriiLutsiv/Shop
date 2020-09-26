@@ -1,20 +1,27 @@
 .ShoppingCart {
-    display: flex;
-    padding: 0 5px;
-    position: relative;
+    display: none
 }
 
-.ShoppingCart:hover {
-    cursor: pointer;
-}
 
-.ShoppingCart img {
-    height: 25px;
-    width: 25px;
-    margin-top: -5px;
-}
-
-.Quantity {
-    margin-left: 15px;
-    font-size: 20px;
+@media(min-width: 420px) {
+    .ShoppingCart {
+        display: flex;
+        padding: 0 5px;
+        position: relative;
+    }
+    
+    .ShoppingCart:hover {
+        cursor: pointer;
+    }
+    
+    .ShoppingCart img {
+        height: 25px;
+        width: 25px;
+        margin-top: -5px;
+    }
+    
+    .Quantity {
+        margin-left: 15px;
+        font-size: 20px;
+    }
 }

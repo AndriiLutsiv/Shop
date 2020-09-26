@@ -17,3 +17,14 @@
 .Button:disabled {
     cursor: not-allowed;
 }
+
+@media (min-width: 480px) {
+    .Button {
+        padding: 8px 9px;
+    }
+}
+@media (min-width: 900px) {
+    .Button {
+        padding: 10px 25px;
+    }
+}

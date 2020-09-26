@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./checkOutItem.module.css";
 const CheckOutItem = (props) => {
+  console.log(props);
   return (
     <div className={classes.Item}>
       <div className={classes.Item1}>

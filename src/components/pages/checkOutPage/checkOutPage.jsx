@@ -9,9 +9,9 @@ import OrderForm from "../../orderForm/orderForm";
 import BackDrop from "../../backDrop/BackDrop";
 
 class CheckOutPage extends React.Component {
-  componentDidMount() {
-    this.props.checkItemThunkCreator();
-  }
+  // componentDidMount() {
+  //   this.props.checkItemThunkCreator();
+  // }
   render() {
     return (
       <>
@@ -82,12 +82,20 @@ const mapDispatchToProps = (dispatch) => {
   return {
     increaseAC: (itemId, itemPrice, quantity) =>
       dispatch(AC.increaseAC(itemId, itemPrice, quantity)),
+
+      // increaseThunkCretor: ( itemId, itemPrice, quantity) => {
+      //   dispatch(AC.increaseThunkCretor(itemId, itemPrice, quantity))
+      // },
+      // decreaseThunkCretor: (itemId, itemPrice, quantity) => {
+      //   dispatch(AC.decreaseThunkCretor(itemId, itemPrice, quantity))
+      // },
+
     decreaseAC: (itemId, itemPrice, quantity) =>
       dispatch(AC.decreaseAC(itemId, itemPrice, quantity)),
     removeItemThunkCreator: (itemId, itemPrice, quantity) =>
       dispatch(AC.removeItemThunkCreator(itemId, itemPrice, quantity)),
     showOrderFormAC: () => dispatch(ACorderForm.showOrderFormAC()),
-    checkItemThunkCreator: () => dispatch(AC.checkItemThunkCreator()),
+    // checkItemThunkCreator: () => dispatch(AC.checkItemThunkCreator()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CheckOutPage);

@@ -7,10 +7,13 @@
     padding-top: 10px;
     padding-bottom: 10px;
     z-index: 2;
+    /* overflow-x: scroll; */
+    
 }
 
 .Item img {
-    height: 150px;
+    height: 100px;
+    width: 80px;
 }
 
 .Arrows {
@@ -52,4 +55,11 @@
     width: 15%;
     text-align: right;
     cursor: pointer;
+}
+
+@media(min-width: 900px) {
+    .Item img {
+        height: 150px;
+        width: 110px;
+    }
 }

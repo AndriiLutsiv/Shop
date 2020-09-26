@@ -4,7 +4,11 @@ import Button from "../../../../../button";
 import * as AC from "../../../../../Redux/cartPreview/cartPreviewAC";
 import { connect } from "react-redux";
 import ButtonAdded from "../../../../../buttonAdded";
+
 class CollectionItem extends React.Component {
+ componentDidMount () {
+   this.forceUpdate();
+ }
   addItem = () => {
     this.props.addItemThunkCreator(
       this.props.item,
@@ -14,6 +18,7 @@ class CollectionItem extends React.Component {
   };
 
   render() {
+    console.log('hello');
     return (
       <div className={classes.CollectionItem}>
         <div
@@ -22,15 +27,15 @@ class CollectionItem extends React.Component {
         ></div>
         <div className={classes.Description}>
           <div className={classes.Name}>{this.props.item.name}</div>
-          <div className={classes.Price}>{this.props.item.price}</div>
+          <div className={classes.Price}>{this.props.item.price}$</div>
         </div>
-        <div className={classes.WithButton}>
-          {localStorage.getItem(this.props.item.id) ? (
+        {/* <div className={classes.WithButton}> */}
+          {sessionStorage.getItem(this.props.item.id) ? (
             <ButtonAdded />
           ) : (
             <Button onClick={this.addItem} meaning={"Add to cart"} />
           )}
-        </div>
+        {/* </div> */}
       </div>
     );
   }
@@ -40,6 +45,7 @@ const mapStateToProps = (state) => {
   return {
     items: state.cartPreviewReducer.items,
     buttonState: state.cartPreviewReducer.buttonState,
+    departmentsData: state.departmentsDataReducer.sections
   };
 };
 const mapDispatchToPrps = (dispatch) => {

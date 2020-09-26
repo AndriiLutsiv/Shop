@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import classes from "./button.module.css";
 const Button = (props) => {
   return (

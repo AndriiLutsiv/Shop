@@ -2,6 +2,9 @@ import React from "react";
 import CollectionPreview from "./collectionPreview/collectionPreview";
 import { connect } from "react-redux";
 class ShopPage extends React.Component {
+  componentDidMount () {
+    this.props.items.length === 0 && sessionStorage.clear();
+  }
   render() {
     return (
       <div className="shoppage">

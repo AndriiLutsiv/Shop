@@ -4,9 +4,7 @@ import {
 } from "./cartPreviewUtils";
 const initialState = {
     displayPreview: false,
-    items: [
-
-    ],
+    items: [],
     totalPrice: 0,
 };
 
@@ -22,7 +20,7 @@ const cartPreviewReducer = (state = initialState, action) => {
                 //it returns new Set of unique items
                 ...state,
                 totalPrice: state.totalPrice + action.itemPrice,
-                    items: itemQuantity([...state.items, action.item]),
+                    items: itemQuantity([...state.items, action.item]),                  
             };
         case TYPES.INCREASE_QUANTITY:
             return {
@@ -32,8 +30,7 @@ const cartPreviewReducer = (state = initialState, action) => {
                         if (item.id === action.itemId) {
                             return {
                                 ...item,
-                                quantity: (item.quantity += 1),
-
+                                quantity: (item.quantity += 1)
                             };
                         } else {
                             return item;

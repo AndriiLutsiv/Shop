@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./cartPreviewItem.module.css";
 const CartPreviewItem = (props) => {
-  console.log(props);
   return (
     <div className={classes.CartPreviewItem}>
       <div className={classes.Image}>

@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../../../Input";
 import classes from "./SignIn.module.css";
 import Button from "../../../../button";
-import { signInWithGoogle } from "../../../../firebase/firebase";
+import GoogleBtn from "../../../googleButton";
 
 class SignIn extends React.Component {
   state = {
@@ -41,8 +41,11 @@ class SignIn extends React.Component {
             value={this.state.password}
           />
           <Button meaning={"Sign In"} />
-          <Button onClick={signInWithGoogle} meaning={"Sign In with Google"} />
+          <Button meaning={"Sign Up"} />
         </form>
+        <div className={classes.GoogleBtn}>
+          <GoogleBtn/>
+          </div>
       </div>
     );
   }
