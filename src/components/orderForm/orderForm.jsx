@@ -2,8 +2,18 @@ import React from "react";
 import classes from "./orderForm.module.css";
 import Button from "../../button";
 import * as AC from "../../Redux/orderForm/orderFormAC";
+
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { clearItemsAC } from "../../Redux/cartPreview/cartPreviewAC";
 class OrderForm extends React.Component {
+  proceedToThankYou = () => {
+    this.props.hideOrderFormAC();
+    this.props.clearItemsAC();
+    sessionStorage.clear();
+    this.props.history.replace('/thank');
+    
+  }
   render() {
     let addClasses = [classes.OrderForm];
     if (this.props.open) {
@@ -24,7 +34,7 @@ class OrderForm extends React.Component {
           <input type="text" placeholder="Your phone number" />
         </div>
         <div className={classes.Button}>
-          <Button meaning="confirm order" />
+          <Button onClick={this.proceedToThankYou} meaning="confirm order" />
         </div>
         <div
           onClick={() => this.props.hideOrderFormAC()}
@@ -45,7 +55,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     hideOrderFormAC: () => dispatch(AC.hideOrderFormAC()),
+    clearItemsAC: () => dispatch(clearItemsAC()),
   };
+
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OrderForm)) ;

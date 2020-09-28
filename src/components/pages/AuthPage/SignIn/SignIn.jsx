@@ -23,7 +23,6 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className={classes.SignIn}>
-        <h2>I already have an account</h2>
         <div>Sign in with your email and passord</div>
         <form onSubmit={this.submit}>
           <Input
@@ -41,7 +40,7 @@ class SignIn extends React.Component {
             value={this.state.password}
           />
           <Button meaning={"Sign In"} />
-          <Button meaning={"Sign Up"} />
+          {/* <Button meaning={"Sign Up"} /> */}
         </form>
         <div className={classes.GoogleBtn}>
           <GoogleBtn/>

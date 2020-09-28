@@ -12,6 +12,7 @@ import Sneakers from "./components/pages/homePage/sneakers/sneakeers";
 import Mens from "./components/pages/homePage/mens/mens";
 import Womens from "./components/pages/homePage/womens/womens";
 import OrderForm from "./components/orderForm/orderForm";
+import ThankYou from "./components/thankYou/thankYou";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
       <Route path={"/sneakers"} component={Sneakers} />
       <Route path={"/mens"} component={Mens} />
       <Route path={"/womens"} component={Womens} />
+      <Route exact path={"/thank"} component={ThankYou} />
+      
     </div>
   );
 }

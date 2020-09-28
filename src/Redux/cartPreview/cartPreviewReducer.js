@@ -58,6 +58,12 @@ const cartPreviewReducer = (state = initialState, action) => {
                 totalPrice: state.totalPrice - action.itemPrice * action.quantity,
                     items: state.items.filter((item) => item.id !== action.itemId),
             };
+        case TYPES.CLEAR_ITEMS:
+            return {
+                ...state,
+                items: [],
+                totalPrice: 0
+            }
         default:
             return state;
     }

@@ -1,6 +1,6 @@
 .OrderForm {
-    height: 400px;
-    width: 280px;
+    height: 360px;
+    width: 260px;
 
     display: flex;
     flex-direction: column;
@@ -15,8 +15,8 @@
     box-sizing: border-box;
     box-shadow: 5px 5px 8px -2px gray;
     left: 50%;
-    margin-left: -140px;
-    top: 30vh;
+    margin-left: -130px;
+    top: 22vh;
     z-index: 5;
     transition: all 0.5s ease-out;
 }
@@ -100,4 +100,29 @@
     align-items: center;
     margin-bottom: 30px;
     margin-top: 30px;
+}
+
+@media(min-width: 600px){
+    .OrderForm {
+        height: 400px;
+        width: 280px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid grey;
+        background-image: url('../../assets/man.png');
+        background-color: rgb(255, 255, 255);
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 8px -2px gray;
+        left: 50%;
+        margin-left: -140px;
+        top: 30vh;
+        z-index: 5;
+        transition: all 0.5s ease-out;
+    }
 }

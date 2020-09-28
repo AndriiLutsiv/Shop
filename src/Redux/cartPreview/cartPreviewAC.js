@@ -35,6 +35,10 @@ export const removeItemAC = (itemId, itemPrice, quantity) => {
     }
 }
 
+export const clearItemsAC = () => {
+    return {type:  TYPES.CLEAR_ITEMS}
+}
+
 export const removeItemThunkCreator = (itemId, itemPrice, quantity) => {
     return (dispatch) => {
         sessionStorage.removeItem(itemId);
@@ -59,6 +63,8 @@ export const decreaseAC = (itemId, itemPrice, quantity) => {
         quantity: quantity
     }
 }
+
+
 
 // export const checkItemThunkCreator = () => {
 //     return (dispatch) => {

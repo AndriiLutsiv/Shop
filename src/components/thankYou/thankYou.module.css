@@ -1,0 +1,43 @@
+.Image {
+    /* height: 50px; */
+    width: 75px;
+}
+
+.Title {
+    font-size: 20px;
+    color: rgb(5, 207, 5);
+    text-align: center;
+}
+
+.ThankYou {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ThankYou button {
+    margin-top: 50px;
+}
+
+@media(min-width: 480px) {
+    .ThankYou button {
+        padding: 10px 25px;
+    }  
+}
+
+@media(min-width: 600px) {
+    .Title {
+        font-size: 24px;
+    }
+
+    .Title:nth-child(2) {
+        margin-bottom: 50px;
+    }
+
+    .Image {
+        /* height: 75px; */
+        width: 100px;
+    }
+
+}

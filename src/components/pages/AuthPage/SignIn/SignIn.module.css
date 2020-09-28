@@ -1,11 +1,23 @@
 .SignIn {
-    width: 25%;
+    max-width: 300px;
     margin-left: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.SignIn button {
+    height: 38px;
+    margin-left: -25px;
+    /* margin-right: auto; */
+    
 }
 .GoogleBtn{
-    margin: 25px auto;
+    position: absolute;
+    bottom: 0;
+    right: 37px;
 }

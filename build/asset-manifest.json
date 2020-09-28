@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8b3c7599.chunk.css",
+    "main.js": "/static/js/main.d784f36c.chunk.js",
+    "main.js.map": "/static/js/main.d784f36c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f2e4f4fd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f2e4f4fd.js.map",
+    "static/js/2.3fee3628.chunk.js": "/static/js/2.3fee3628.chunk.js",
+    "static/js/2.3fee3628.chunk.js.map": "/static/js/2.3fee3628.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a386e905ef6a52926aa0a43bff1be479.js": "/precache-manifest.a386e905ef6a52926aa0a43bff1be479.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.8b3c7599.chunk.css.map": "/static/css/main.8b3c7599.chunk.css.map",
+    "static/js/2.3fee3628.chunk.js.LICENSE.txt": "/static/js/2.3fee3628.chunk.js.LICENSE.txt",
+    "static/media/orderForm.module.css": "/static/media/man.a04fac91.png",
+    "static/media/svg.png": "/static/media/svg.165db776.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2e4f4fd.js",
+    "static/js/2.3fee3628.chunk.js",
+    "static/css/main.8b3c7599.chunk.css",
+    "static/js/main.d784f36c.chunk.js"
+  ]
+}
